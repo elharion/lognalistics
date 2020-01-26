@@ -1,0 +1,7 @@
+FROM ruby:2.6.5
+
+ENV RUBY_VERSION=2.6.5
+ENV BUNDLER_VERSION=2.0.2
+
+RUN gem install bundler --version "$BUNDLER_VERSION"
+
