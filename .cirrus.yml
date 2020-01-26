@@ -1,0 +1,6 @@
+container:
+  image: ruby:2.6.5
+
+task:
+  name: Tests
+  test_script: bundle exec rspec spec
