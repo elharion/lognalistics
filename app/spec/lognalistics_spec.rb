@@ -11,7 +11,7 @@ RSpec.describe Lognalistics do
     it 'displays most viewed pages' do
       expect(subject).to eq(
         [
-          ['/home', 7],
+          ['/home', 6],
           ['/index', 4],
           ['/help_page', 2]
         ]
@@ -27,7 +27,7 @@ RSpec.describe Lognalistics do
         [
           ['/index', 3],
           ['/help_page', 2],
-          ['/home', 1]
+          ['/home', 2]
         ]
       )
     end
