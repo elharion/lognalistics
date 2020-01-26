@@ -1,4 +1,0 @@
-task:
-  container:
-    dockerfile: Dockerfile
-  test_script: ls -la && docker image ls && bundle exec rspec spec
