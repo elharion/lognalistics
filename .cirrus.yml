@@ -1,4 +1,4 @@
 task:
   container:
     dockerfile: Dockerfile
-    test_script: bundle exec rspec spec
+  test_script: bundle exec rspec spec
