@@ -2,7 +2,7 @@
 
 RSpec.describe Lognalistics::LogRepository do
   let(:repository) { described_class.new(store: store) }
-  let(:store) { double('Array', push: true) }
+  let(:store) { [] }
 
   describe '#save' do
     subject { repository.save(path: entry[:path], ip: entry[:ip]) }
@@ -15,6 +15,18 @@ RSpec.describe Lognalistics::LogRepository do
         .and_return(true)
 
       expect(subject).to eq(entry)
+    end
+  end
+
+  describe '#all' do
+    subject { repository.all }
+
+    let(:sample) { { foo: :bar } }
+
+    before { store.push(sample) }
+
+    it 'returns everything from store' do
+      expect(subject).to contain_exactly(sample)
     end
   end
 end

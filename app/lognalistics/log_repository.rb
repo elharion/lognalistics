@@ -10,7 +10,7 @@ module Lognalistics
     end
 
     def all
-      RuntimeMemoryStore
+      store
     end
 
     private
