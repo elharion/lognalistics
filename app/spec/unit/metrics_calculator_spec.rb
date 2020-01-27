@@ -41,4 +41,13 @@ RSpec.describe Lognalistics::MetricsCalculator do
       )
     end
   end
+
+  context 'when wrong type options is provided' do
+    let(:type) { :doesnt_exist }
+
+    it 'raises ArgumentError' do
+      error_message = "Wrong type provided, available: 'total_views, 'unique_views'"
+      expect { subject }.to raise_error(ArgumentError, error_message)
+    end
+  end
 end
