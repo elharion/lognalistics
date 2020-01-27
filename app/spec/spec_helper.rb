@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 require_relative '../lognalistics'
 
 RSpec.configure do |config|
