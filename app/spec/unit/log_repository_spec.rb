@@ -8,7 +8,7 @@ RSpec.describe Lognalistics::LogRepository do
     subject { repository.save(path: entry[:path], ip: entry[:ip]) }
     let(:entry) { { path: '/home', ip: '192.168.1.1' } }
 
-    it 'persists entry in memory' do
+    it 'persists entry' do
       expect(store)
         .to receive(:push)
         .with(entry)
