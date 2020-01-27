@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 RSpec.describe Lognalistics::LogRepository do
-  let(:repository) { described_class.new(store: store_double) }
-  let(:store_double) { double(push: entry) }
+  let(:repository) { described_class.new(store: store) }
+  let(:store) { double('Array', push: true) }
 
   describe '#save' do
-    subject { repository.save(entry) }
+    subject { repository.save(path: entry[:path], ip: entry[:ip]) }
     let(:entry) { { path: '/home', ip: '192.168.1.1' } }
 
     it 'persists entry in memory' do
-      expect(store_double)
+      expect(store)
         .to receive(:push)
         .with(entry)
-        .and_return(entry)
+        .and_return(true)
 
-      subject
+      expect(subject).to eq(entry)
     end
   end
 end
