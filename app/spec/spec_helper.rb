@@ -1,4 +1,4 @@
-require_relative "../lognalistics"
+require_relative '../lognalistics'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
