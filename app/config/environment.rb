@@ -12,3 +12,9 @@ RuntimeMemoryStore = [].freeze
 
 # Run project dependencies
 require 'config/initializers'
+
+# locales simulation
+SimpleLocale = {
+  total_views: ->(num:) { "visits: #{num}" },
+  unique_views: ->(num:) { "unique views: #{num}" }
+}.freeze

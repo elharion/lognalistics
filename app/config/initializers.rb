@@ -6,4 +6,5 @@ require '/app/lognalistics/processor'
 require '/app/lognalistics/metrics_calculator'
 
 require '/app/lognalistics/presenters/stdout'
+require '/app/lognalistics/presenters/json'
 require '/app/lognalistics/presenter'
