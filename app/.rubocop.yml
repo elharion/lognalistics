@@ -1,0 +1,28 @@
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Layout/HashAlignment:
+  Enabled: false
+
+Style/PerlBackrefs:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/WordArray:
+  EnforcedStyle: percent
+
+Metrics/LineLength:
+  Enabled: true
+  Max: 120
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Naming/ConstantName:
+  Enabled: false

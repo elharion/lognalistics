@@ -21,7 +21,6 @@ module Lognalistics
 
     def calculate_views(data, type)
       data.each_with_object({}) do |entry, result|
-        path_counter = result.dig(:path, type) || 0
         result[entry[:path]] ||= Hash.new(0)
         result[entry[:path]][type] += 1
       end

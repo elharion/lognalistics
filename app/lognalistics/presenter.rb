@@ -2,19 +2,23 @@
 
 module Lognalistics
   class Presenter
-    PRESENTERS = {
-      stdout: Presenters::Stdout
-    }.freeze
+    def initialize(presenters = nil)
+      @presenters = presenters || {
+        stdout: Presenters::Stdout
+      }
+    end
 
-    def render(stats, output = :stdout)
-      formatter = fetch_formatter(output)
-      formatter.present(stats)
+    def render(stats, output = :stdout, presenters = nil)
+      presenter = fetch_presenter(output)
+      presenter.call(stats)
     end
 
     private
 
-    def fetch_formatter(output)
-      PRESENTERS.fetch(output) { raise ArgumentError 'Output format not supported' }
+    attr_reader :presenters
+
+    def fetch_presenter(output)
+      presenters.fetch(output) { raise ArgumentError, 'Output format not supported' }
     end
   end
 end

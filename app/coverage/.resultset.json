@@ -2,14 +2,17 @@
   "RSpec": {
     "coverage": {
       "/app/lognalistics.rb": [
+        null,
+        null,
         1,
         null,
         1,
         1,
-        null,
         null
       ],
       "/app/config/environment.rb": [
+        null,
+        null,
         null,
         1,
         1,
@@ -24,6 +27,8 @@
         1
       ],
       "/app/config/initializers.rb": [
+        null,
+        null,
         1,
         1,
         1,
@@ -33,6 +38,8 @@
         1
       ],
       "/app/lognalistics/log_repository.rb": [
+        null,
+        null,
         1,
         1,
         1,
@@ -55,6 +62,8 @@
         null
       ],
       "/app/lognalistics/parser.rb": [
+        null,
+        null,
         1,
         1,
         1,
@@ -75,6 +84,8 @@
         null
       ],
       "/app/lognalistics/processor.rb": [
+        null,
+        null,
         1,
         1,
         1,
@@ -108,6 +119,8 @@
         null
       ],
       "/app/lognalistics/metrics_calculator.rb": [
+        null,
+        null,
         1,
         1,
         1,
@@ -131,13 +144,14 @@
         2,
         12,
         12,
-        12,
         null,
         null,
         null,
         null
       ],
       "/app/lognalistics/presenters/stdout.rb": [
+        null,
+        null,
         1,
         1,
         1,
@@ -150,19 +164,23 @@
         null,
         1,
         1,
+        1,
+        3,
         null,
-        1,
         null,
-        null,
-        1,
-        1,
-        1,
         null,
         null,
         1,
+        2,
+        1,
+        null,
         null,
         1,
+        null,
         1,
+        null,
+        1,
+        3,
         null,
         null,
         null
@@ -281,23 +299,36 @@
         null,
         1,
         1,
+        3,
+        null,
+        3,
+        null,
         1,
         2,
         2,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
         2,
         2,
-        null,
         1,
         1,
         null,
         null,
         null,
-        null,
         1,
-        null,
-        null,
-        null,
-        1,
+        2,
         null,
         null,
         null,
@@ -347,6 +378,6 @@
         null
       ]
     },
-    "timestamp": 1580196594
+    "timestamp": 1580250538
   }
 }
