@@ -11,7 +11,6 @@ module Lognalistics
           end
         end
 
-        binding.pry
         { result: result }.to_json
       end
     end

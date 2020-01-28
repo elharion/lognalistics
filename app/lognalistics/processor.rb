@@ -9,14 +9,17 @@ module Lognalistics
       @presenter = presenter || Presenter.new
     end
 
-    def generate_statistics(file_path, type)
+    def generate_statistics(file_path, type, output_format)
       parse_and_persist_logs(file_path)
       stats = calculate_views(type)
-
-      :success
+      show_statistics(stats, output_format)
     end
 
     private
+
+    def show_statistics(stats, output_format)
+      presenter.render(stats, output_format)
+    end
 
     def calculate_views(type)
       metric_calc.call(log_repo.all, type)
@@ -28,6 +31,6 @@ module Lognalistics
       end
     end
 
-    attr_reader :parser, :log_repo, :metric_calc
+    attr_reader :parser, :log_repo, :metric_calc, :presenter
   end
 end
