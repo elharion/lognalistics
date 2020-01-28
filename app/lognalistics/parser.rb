@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Lognalistics
   class Parser
     def initialize(file_path)
@@ -6,8 +8,8 @@ module Lognalistics
 
     def each_line(&block)
       IO.foreach(file_path) do |line|
-        path, ip = line.split(%r{\s})
-        block.call({ path: path, ip: ip })
+        path, ip = line.split(/\s/)
+        block.call(path: path, ip: ip)
       end
     end
 

@@ -27,6 +27,9 @@
         1,
         1,
         1,
+        1,
+        null,
+        1,
         1
       ],
       "/app/lognalistics/log_repository.rb": [
@@ -72,6 +75,7 @@
         null
       ],
       "/app/lognalistics/processor.rb": [
+        1,
         1,
         1,
         1,
@@ -129,6 +133,36 @@
         12,
         12,
         null,
+        null,
+        null,
+        null
+      ],
+      "/app/lognalistics/presenters/stdout.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/app/lognalistics/presenter.rb": [
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
         null,
         null,
         null
@@ -242,6 +276,33 @@
         null,
         null
       ],
+      "/app/spec/unit/presenter_spec.rb": [
+        null,
+        null,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
       "/app/spec/unit/processor_spec.rb": [
         null,
         null,
@@ -286,6 +347,6 @@
         null
       ]
     },
-    "timestamp": 1580165534
+    "timestamp": 1580196594
   }
 }

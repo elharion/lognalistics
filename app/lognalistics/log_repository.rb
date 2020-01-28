@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Lognalistics
   class LogRepository
-    def initialize(store: RuntimeMemoryStore)
-      @store = store
+    def initialize(store: nil)
+      @store = store || RuntimeMemoryStore
     end
 
     def save(path:, ip:)

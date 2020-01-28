@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 module Lognalistics
   class MetricsCalculator
     def call(data, type)
       case type
       when :total_views
-        return calculate_views(data, type)
+        calculate_views(data, type)
       when :unique_views
-        return calculate_views(data.uniq, type)
+        calculate_views(data.uniq, type)
       else
         wrong_argument_exception
       end

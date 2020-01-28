@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 require_relative 'config/environment'
 
 module Lognalistics
-  def analyse
-  end
+  def analyse; end
 end

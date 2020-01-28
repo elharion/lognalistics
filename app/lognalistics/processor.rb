@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 module Lognalistics
   class Processor
-    def initialize(parser: nil, log_repo: nil, metric_calc: nil)
+    def initialize(parser: nil, log_repo: nil, metric_calc: nil, presenter: nil)
       @parser = parser || Parser
       @log_repo = log_repo || LogRepository.new
       @metric_calc = metric_calc || MetricsCalculator.new
+      @presenter = presenter || Presenter.new
     end
 
     def generate_statistics(file_path, type)

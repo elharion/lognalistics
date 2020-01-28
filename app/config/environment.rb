@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Load paths
 ROOT_PATH = File.dirname(__dir__)
 $LOAD_PATH.push ROOT_PATH
@@ -6,7 +8,7 @@ $LOAD_PATH.push ROOT_PATH
 require 'pry'
 
 # Simple data cache in memory
-RuntimeMemoryStore = []
+RuntimeMemoryStore = [].freeze
 
 # Run project dependencies
 require 'config/initializers'

@@ -24,7 +24,7 @@ RSpec.describe Lognalistics::MetricsCalculator do
     it 'calculates total views for pages' do
       expect(subject).to match(
         '/index' => { total_views: 2 },
-        '/home'  => { total_views: 3 },
+        '/home' => { total_views: 3 },
         '/about' => { total_views: 2 }
       )
     end
@@ -36,7 +36,7 @@ RSpec.describe Lognalistics::MetricsCalculator do
     it 'calculates unique views for pages' do
       expect(subject).to match(
         '/index' => { unique_views: 2 },
-        '/home'  => { unique_views: 2 },
+        '/home' => { unique_views: 2 },
         '/about' => { unique_views: 1 }
       )
     end
