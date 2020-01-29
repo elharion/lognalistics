@@ -3,7 +3,7 @@
 require 'simplecov'
 SimpleCov.start
 
-require_relative '../lognalistics'
+require_relative '../config/environment'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

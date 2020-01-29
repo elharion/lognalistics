@@ -7,7 +7,7 @@ end
 namespace :lognalistics do
   namespace :total_views do
     task task: :load_environment do
-      puts "--- Running total views statistics --- "
+      puts '--- Running total views statistics --- '
       processor = Lognalistics::Processor.new
       processor.generate_statistics('webserver.log', :total_views, :stdout)
     end
@@ -15,7 +15,7 @@ namespace :lognalistics do
 
   namespace :unique_views do
     task task: :load_environment do
-      puts "--- Running unique views statistics --- "
+      puts '--- Running unique views statistics --- '
       processor = Lognalistics::Processor.new
       processor.generate_statistics('webserver.log', :unique_views, :stdout)
     end

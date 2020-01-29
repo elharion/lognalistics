@@ -1,15 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-      "/app/lognalistics.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
       "/app/config/environment.rb": [
         null,
         null,
@@ -466,6 +457,6 @@
         null
       ]
     },
-    "timestamp": 1580254529
+    "timestamp": 1580257161
   }
 }
