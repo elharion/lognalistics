@@ -8,7 +8,7 @@ $LOAD_PATH.push ROOT_PATH
 require 'pry'
 
 # Simple data cache in memory
-RuntimeMemoryStore = [].freeze
+RuntimeMemoryStore = []
 
 # Run project dependencies
 require 'config/initializers'
