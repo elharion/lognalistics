@@ -4,7 +4,8 @@ module Lognalistics
   class Presenter
     def initialize(presenters = nil)
       @presenters = presenters || {
-        stdout: Presenters::Stdout
+        stdout: Presenters::Stdout,
+        json: Presenters::Json
       }
     end
 

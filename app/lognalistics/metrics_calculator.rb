@@ -23,7 +23,9 @@ module Lognalistics
       data.each_with_object({}) do |entry, result|
         result[entry[:path]] ||= Hash.new(0)
         result[entry[:path]][type] += 1
-      end
+      end.sort_by do |_path, metric|
+        -metric[type]
+      end.to_h
     end
   end
 end
