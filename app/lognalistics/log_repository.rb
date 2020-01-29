@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Lognalistics
   class LogRepository
     def initialize(store: nil)

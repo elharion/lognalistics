@@ -19,6 +19,7 @@ module Lognalistics
       raise ArgumentError, "Wrong type provided, available: 'total_views, 'unique_views'"
     end
 
+    # rubocop:disable Style/MultilineBlockChain
     def calculate_views(data, type)
       data.each_with_object({}) do |entry, result|
         result[entry[:path]] ||= Hash.new(0)
@@ -27,5 +28,6 @@ module Lognalistics
         -metric[type]
       end.to_h
     end
+    # rubocop:enable Style/MultilineBlockChain
   end
 end
