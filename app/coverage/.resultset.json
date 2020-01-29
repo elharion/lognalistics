@@ -38,6 +38,8 @@
         1
       ],
       "/app/lognalistics/log_repository.rb": [
+        null,
+        null,
         1,
         1,
         1,
@@ -141,12 +143,14 @@
         1,
         null,
         null,
+        null,
         1,
         6,
         50,
         50,
         null,
         18,
+        null,
         null,
         null,
         null,
@@ -541,6 +545,6 @@
         null
       ]
     },
-    "timestamp": 1580291758
+    "timestamp": 1580295404
   }
 }

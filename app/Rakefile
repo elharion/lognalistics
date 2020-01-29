@@ -4,6 +4,10 @@ task :load_environment do
   require_relative './config/environment'
 end
 
+task console: :load_environment do
+  Pry.start
+end
+
 namespace :lognalistics do
   namespace :total_views do
     task task: :load_environment do

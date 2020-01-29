@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-29T09:55:59+00:00">2020-01-29T09:55:59+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-29T10:56:44+00:00">2020-01-29T10:56:44+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -73,7 +73,7 @@
       <tr>
         <td class="strong"><a href="#bb4087b871b23737bd21c1c7aa0a065bef5bb878" class="src_link" title="lognalistics/log_repository.rb">lognalistics/log_repository.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>20</td>
+        <td>22</td>
         <td>11</td>
         <td>11</td>
         <td>0</td>
@@ -83,7 +83,7 @@
       <tr>
         <td class="strong"><a href="#51a5300d9f1485f38624344a40e660879de3259a" class="src_link" title="lognalistics/metrics_calculator.rb">lognalistics/metrics_calculator.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>31</td>
+        <td>33</td>
         <td>15</td>
         <td>15</td>
         <td>0</td>
@@ -480,100 +480,100 @@
   <pre>
     <ol>
       
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="1">
           
-          <code class="ruby">module Lognalistics</code>
+          
+          <code class="ruby"># frozen_string_literal: true</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="2">
           
-          <code class="ruby">  class LogRepository</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
+          <code class="ruby">module Lognalistics</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class LogRepository</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
           <code class="ruby">    def initialize(store: nil)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="4">
+        <li class="covered" data-hits="6" data-linenumber="6">
           <span class="hits">6</span>
           
           <code class="ruby">      @store = store || RuntimeMemoryStore</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">    def save(path:, ip:)</code>
         </li>
       
-        <li class="covered" data-hits="49" data-linenumber="8">
+        <li class="covered" data-hits="49" data-linenumber="10">
           <span class="hits">49</span>
           
           <code class="ruby">      entry = { path: path, ip: ip }</code>
         </li>
       
-        <li class="covered" data-hits="49" data-linenumber="9">
+        <li class="covered" data-hits="49" data-linenumber="11">
           <span class="hits">49</span>
           
           <code class="ruby">      store.push(entry) &amp;&amp; entry</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">    def all</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="13">
+        <li class="covered" data-hits="5" data-linenumber="15">
           <span class="hits">5</span>
           
           <code class="ruby">      store</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    private</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
@@ -585,16 +585,28 @@
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">    attr_reader :store</code>
+          <code class="ruby">    private</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_reader :store</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">end</code>
@@ -745,61 +757,73 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">    # rubocop:disable Style/MultilineBlockChain</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">    def calculate_views(data, type)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="23">
+        <li class="covered" data-hits="6" data-linenumber="24">
           <span class="hits">6</span>
           
           <code class="ruby">      data.each_with_object({}) do |entry, result|</code>
         </li>
       
-        <li class="covered" data-hits="50" data-linenumber="24">
+        <li class="covered" data-hits="50" data-linenumber="25">
           <span class="hits">50</span>
           
           <code class="ruby">        result[entry[:path]] ||= Hash.new(0)</code>
         </li>
       
-        <li class="covered" data-hits="50" data-linenumber="25">
+        <li class="covered" data-hits="50" data-linenumber="26">
           <span class="hits">50</span>
           
           <code class="ruby">        result[entry[:path]][type] += 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">      end.sort_by do |_path, metric|</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="27">
+        <li class="covered" data-hits="18" data-linenumber="28">
           <span class="hits">18</span>
           
           <code class="ruby">        -metric[type]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">      end.to_h</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">    # rubocop:enable Style/MultilineBlockChain</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">end</code>
