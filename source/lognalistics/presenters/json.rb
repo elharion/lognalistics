@@ -3,15 +3,25 @@
 module Lognalistics
   module Presenters
     module Json
-      def self.call(data)
-        result = []
-        data.each do |path, stats|
-          stats.each do |type, val|
-            result.push("#{path} - #{SimpleLocale[type].call(num: val)}")
-          end
+      def self.call
+        printer = Printer.new
+        yield(printer)
+
+        { result: printer.results }.to_json
+      end
+
+      private
+
+      class Printer
+        def initialize
+          @results = []
         end
 
-        { result: result }.to_json
+        def <<(path_metrics)
+          results.push path_metrics
+        end
+
+        attr_reader :results
       end
     end
   end

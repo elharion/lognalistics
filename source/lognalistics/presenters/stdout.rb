@@ -3,11 +3,17 @@
 module Lognalistics
   module Presenters
     module Stdout
-      def self.call(data)
-        data.each do |path, stats|
-          stats.each do |stat, val|
-            $stdout.puts("#{path} - #{SimpleLocale[stat].call(num: val)}")
-          end
+      def self.call
+        printer = Printer.new
+        yield(printer)
+        nil
+      end
+
+      private
+
+      class Printer
+        def <<(path_metrics)
+          $stdout.puts(path_metrics)
         end
       end
     end

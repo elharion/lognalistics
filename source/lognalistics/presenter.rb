@@ -9,9 +9,8 @@ module Lognalistics
       }
     end
 
-    def render(stats, output = :stdout, _presenters = nil)
+    def call(output = :stdout)
       presenter = fetch_presenter(output)
-      presenter.call(stats)
     end
 
     private

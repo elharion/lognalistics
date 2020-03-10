@@ -7,15 +7,27 @@ module Lognalistics
     end
 
     def save(path:, ip:)
-      entry = { path: path, ip: ip }
-      store.push(entry) && entry
+      store[path] ||= init_entry
+
+      store[path].tap do |entry|
+        entry[:total_views] += 1
+        entry[:unique_views] << ip
+      end
     end
 
-    def all
-      store
+    def all_by_unique_views
+      store.sort_by { |path, stats| [-stats[:unique_views].count, path] }
+    end
+
+    def all_by_total_views
+      store.sort_by { |path, stats| [-stats[:total_views], path] }
     end
 
     private
+
+    def init_entry
+      { total_views: 0, unique_views: Set.new }
+    end
 
     attr_reader :store
   end
