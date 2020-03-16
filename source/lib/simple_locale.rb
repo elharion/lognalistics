@@ -24,7 +24,7 @@ module SimpleLocale
           type_not_supported: ->(type:) { "Type #{type} is not supported. Available 'total_views', 'unique_views'." }
         },
         logs: {
-          display_report: ->(path:) { "Run #{Rainbow("cat #{path}").yellow} or display via preferred program" },
+          display_report: ->(path:) { "Run '#{Rainbow("cat #{path} | jq .").green}' or display via preferred program" },
           metrics: {
             for: ->(path:) { Rainbow('Metrics for: ').white + Rainbow(path).yellow },
             output: ->(output:) { Rainbow('Metrics output: ').white + Rainbow(output).yellow },

@@ -16,10 +16,10 @@ module Lognalistics
 
         def persist_results(results)
           timestamp = Time.now.strftime('%Y%m%d%H%M%S')
-          filepath  = File.join(ROOT_PATH, '/public/', "#{timestamp}-report.json")
+          filepath  = File.join(ROOT_PATH, '/public/', "#{timestamp}_report.json")
 
           File.open(filepath, 'w+') do |file|
-            file.write results.to_json
+            file.write({ metrics: results }.to_json)
           end
 
           puts SimpleLocale.t('logs.report_available', path: filepath)

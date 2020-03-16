@@ -12,7 +12,7 @@ module Lognalistics
         desc SimpleLocale.t('cli.metrics.command_desc')
 
         option :log_filename, default: 'webserver.log',
-                              desc: SimpleLocale.t('filename_desc')
+                              desc: SimpleLocale.t('cli.metrics.filename_desc')
         option :type, default: 'total_views', values: %w[unique_views total_views],
                       desc: SimpleLocale.t('cli.metrics.type_desc')
         option :output, default: 'stdout', values: %w[stdout json],
