@@ -1,16 +1,32 @@
 # frozen_string_literal: true
 
+require 'json'
+
 module Lognalistics
   module Presenters
     module Json
-      def self.call
-        printer = Printer.new
-        yield(printer)
+      class << self
+        def call
+          printer = Printer.new
+          yield(printer)
+          persist_results(printer.results)
+        end
 
-        { result: printer.results }.to_json
+        private
+
+        def persist_results(results)
+          timestamp = Time.now.strftime('%Y%m%d%H%M%S')
+          filepath  = File.join(ROOT_PATH, '/public/', "#{timestamp}-report.json")
+
+          File.open(filepath, 'w+') do |file|
+            file.write results.to_json
+          end
+
+          puts SimpleLocale.t('logs.report_available', path: filepath)
+          puts SimpleLocale.t('logs.display_report', path: filepath)
+          filepath
+        end
       end
-
-      private
 
       class Printer
         def initialize

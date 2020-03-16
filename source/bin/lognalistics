@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require '/app/config/environment'
+
+module Lognalistics
+  module CLI
+    module Commands
+      extend Dry::CLI::Registry
+
+      class Metrics < Dry::CLI::Command
+        desc SimpleLocale.t('cli.metrics.command_desc')
+
+        option :log_filename, default: 'webserver.log',
+                              desc: SimpleLocale.t('filename_desc')
+        option :type, default: 'total_views', values: %w[unique_views total_views],
+                      desc: SimpleLocale.t('cli.metrics.type_desc')
+        option :output, default: 'stdout', values: %w[stdout json],
+                        desc: SimpleLocale.t('cli.metrics.output_desc')
+
+        def call(log_filename:, type:, output:, **)
+          processor = Lognalistics::Processor.new
+          processor.call(log_filename, type, output)
+        rescue Errno::ENOENT => _e
+          puts SimpleLocale.t('errors.file_doesnt_exist', path: log_filename)
+        end
+      end
+
+      class Version < Dry::CLI::Command
+        desc SimpleLocale.t('cli.version.command_desc')
+
+        def call
+          puts APP_VERSION
+        end
+      end
+
+      register 'metrics', Metrics, aliases: ['m']
+    end
+  end
+end
+
+Dry::CLI.new(Lognalistics::CLI::Commands).call

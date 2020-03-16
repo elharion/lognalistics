@@ -16,11 +16,15 @@ module Lognalistics
     end
 
     def all_by_unique_views
-      store.sort_by { |path, stats| [-stats[:unique_views].count, path] }
+      store
+        .sort_by { |path, stats| [-stats[:unique_views].count, path] }
+        .map { |metric| Lognalistics::Decorators::UniqueView.new(metric) }
     end
 
     def all_by_total_views
-      store.sort_by { |path, stats| [-stats[:total_views], path] }
+      store
+        .sort_by { |path, stats| [-stats[:total_views], path] }
+        .map { |metric| Lognalistics::Decorators::TotalView.new(metric) }
     end
 
     private

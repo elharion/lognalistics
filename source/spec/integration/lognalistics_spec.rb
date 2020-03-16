@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'calculates pages statistics' do
+RSpec.describe 'calculates log metrics' do
   after do
     # Since this is in memory
     # needs to be cleaned up between cases
@@ -93,9 +93,9 @@ RSpec.describe 'calculates pages statistics' do
   end
 
   context 'when multiple metric types are provided' do
-    let(:types) { [:total_views, :unique_views] }
+    let(:types) { %i[total_views unique_views] }
 
-    it "returns statistics for all types" do
+    it 'returns statistics for all types' do
       expect { subject }.to output(
         "/home - visits: 6\n"\
         "/index - visits: 4\n"\

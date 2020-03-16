@@ -2,11 +2,14 @@
 
 module Lognalistics
   class Presenter
+    PRESENTERS = {
+      'stdout' => Presenters::Stdout,
+      'json' => Presenters::Json
+    }.freeze
+    private_constant :PRESENTERS
+
     def initialize(presenters = nil)
-      @presenters = presenters || {
-        stdout: Presenters::Stdout,
-        json: Presenters::Json
-      }
+      @presenters = presenters || PRESENTERS
     end
 
     def call(output = :stdout)
@@ -18,7 +21,7 @@ module Lognalistics
     attr_reader :presenters
 
     def fetch_presenter(output)
-      presenters.fetch(output) { raise ArgumentError, 'Output format not supported' }
+      presenters.fetch(output) { raise ArgumentError, SimpleLocale.t('errors.output_not_supported', output: output) }
     end
   end
 end

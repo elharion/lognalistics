@@ -2,8 +2,9 @@
 
 source 'https://rubygems.org'
 
+gem 'dry-cli'
 gem 'pry'
-gem 'rake'
+gem 'rainbow'
 gem 'rspec'
 gem 'rubocop', require: false
 gem 'simplecov'

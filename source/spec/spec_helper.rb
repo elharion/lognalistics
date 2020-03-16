@@ -3,6 +3,8 @@
 require 'simplecov'
 SimpleCov.start
 
+Rainbow.enabled = false
+
 require_relative '../config/environment'
 
 RSpec.configure do |config|
